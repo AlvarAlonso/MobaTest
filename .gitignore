@@ -1,5 +1,6 @@
 # Visual Studio 2015 user specific files
 .vs/
+.idea/
 
 # Compiled Object files
 *.slo
@@ -51,6 +52,7 @@ Plugins/*/Binaries/*
 
 # Builds
 Build/*
+Builds/*
 
 # Whitelist PakBlacklist-<BuildConfiguration>.txt files
 !Build/*/
@@ -72,3 +74,12 @@ Plugins/*/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+
+lfs/*
+packages/*
+Tools/*
+
+#FMOD
+FMOD/.unsaved
+FMOD/.user
+FMOD/.cache
