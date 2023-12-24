@@ -3,26 +3,25 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Character.h"
+#include "GameFramework/Actor.h"
 #include "GenericTeamAgentInterface.h"
 
-#include "MobaCharacterBase.generated.h"
+#include "MobaBuildingBase.generated.h"
 
 UCLASS()
-class MOBASANDBOX_API AMobaCharacterBase : public ACharacter, public IGenericTeamAgentInterface
+class MOBASANDBOX_API AMobaBuildingBase : public AActor, public IGenericTeamAgentInterface
 {
 	GENERATED_BODY()
-
-public:
-	// Sets default values for this character's properties
-	AMobaCharacterBase();
+	
+public:	
+	// Sets default values for this actor's properties
+	AMobaBuildingBase();
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
 	/** GenericTeamAgentInterface **/
-	UFUNCTION(BlueprintCallable)
 	virtual void SetGenericTeamId(const FGenericTeamId& TeamID) { GenericTeamID = TeamID; }
 	virtual FGenericTeamId GetGenericTeamId() const { return GenericTeamID; }
 	// -----------------------------
@@ -30,9 +29,6 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
-	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Team")

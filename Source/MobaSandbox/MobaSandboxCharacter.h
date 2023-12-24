@@ -4,10 +4,13 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+
+#include "Actors/Characters/MobaCharacterBase.h"
+
 #include "MobaSandboxCharacter.generated.h"
 
 UCLASS(Blueprintable)
-class AMobaSandboxCharacter : public ACharacter
+class AMobaSandboxCharacter : public AMobaCharacterBase
 {
 	GENERATED_BODY()
 
